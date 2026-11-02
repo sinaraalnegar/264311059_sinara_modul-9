@@ -13,6 +13,8 @@ WHERE u.role = 'mitra'
 GROUP BY u.user_id, u.name;
 ```
 
+![tampilkan gambar](asset/Picture1.png)
+
  Analisis Kompleksitas Query:
 
 Kompleksitas Waktu (Time Complexity): Secara teoretis, kompleksitas kueri ini berada pada kisaran O(N×M) atau O(N log⁡ N ) jika dioptimalkan dengan indeks.
