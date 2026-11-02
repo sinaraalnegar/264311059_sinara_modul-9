@@ -44,6 +44,7 @@ SET total_lokasi_terdaftar = (
     WHERE l.mitra_id = u.user_id
 );
 ```
+![tampilkan gambar](asset/Picture2.png)
 
 **3. Pembuktian (Tahap 3): Tulis query SELECT sederhana untuk memanggil data dari kolom/tabel denormalisasi (Tahap 2) tanpa menggunakan JOIN atau agregasi. Bandingkan dengan query Tahap 1.**
 
@@ -58,6 +59,8 @@ SELECT 
 FROM users
 WHERE role = 'mitra';
 ```
+![tampilkan gambar](asset/Picture3.png)
+
 Perbandingan Antara Tahap 1 dan Tahap 3 Dari Sisi Kompleksitas & Performa:
 -Tahap 1 (Normalisasi Penuh): Menggunakan JOIN dan fungsi agregasi COUNT(). Proses kerjanya dinamis (on-the-fly), di mana MySQL harus mencocokkan baris antar tabel secara langsung setiap kali kueri dipanggil. Kompleksitas waktunya tinggi (O(N×M)), sehingga jika data pada tabel lokasi sudah mencapai ribuan baris, aplikasi akan terasa lambat (slow query) saat memuat halaman dasbor.
 -Tahap 3 (Hasil Denormalisasi): Menggunakan kueri SELECT sederhana dari satu tabel saja tanpa JOIN dan tanpa fungsi agregasi. Nilai totalnya sudah tersedia secara fisik di dalam kolom total_lokasi_terdaftar. Kompleksitas waktunya menjadi jauh lebih cepat (O(N)), sangat optimal untuk mendukung performa pemuatan halaman dasbor (dashboard aplikasi). 
