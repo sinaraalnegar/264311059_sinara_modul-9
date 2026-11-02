@@ -1,5 +1,6 @@
 1.	Lampirkan kedua script SQL kelompok Anda: (1) Query JOIN yang kompleks, dan (2) Script DDL pembentukan kolom/tabel denormalisasi beserta query panggilannya!
-Jawab : 
+Jawab :
+
 -- Menghitung total tempat/lokasi ramah lingkungan yang didaftarkan oleh setiap mitra
 SELECT 
     u.user_id AS id_mitra,
@@ -31,6 +32,7 @@ FROM users
 WHERE role = 'mitra';
 
 2.	 Berdasarkan percobaan kelompok Anda, jelaskan dengan bahasa sendiri kelebihan denormalisasi dalam memangkas penggunaan klausa JOIN pada sistem informasi!
+   
 Jawab: 
 denormalisasi berfungsi menyatukan data yang terpecah ke dalam satu tabel sehingga sistem tidak perlu lagi memakai klausa JOIN yang lambat. Hasilnya, proses pembacaan data menjadi jauh lebih cepat, penulisan query lebih sederhana, dan beban kerja server berkurang drastis terutama saat diakses banyak pengguna.
 
